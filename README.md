@@ -106,3 +106,18 @@ bundle exec jekyll serve
 版型不用動。**照片請盡量選背景深色的**——首屏的底色是近黑色，深色背景
 才會融進版面看不出邊界。順帶一提，這張照片同時也是分享連結到 LINE、
 Facebook 時顯示的預覽圖。
+
+## 網站圖示（favicon）
+
+瀏覽器分頁、手機書籤用的圖示，來源是白斑鳩與聽診器的站徽：
+
+| 檔案 | 用途 |
+|---|---|
+| `favicon.ico` | 瀏覽器分頁（內含 16／32／48 三種尺寸） |
+| `assets/img/favicon-32.png`、`favicon-16.png` | 現代瀏覽器分頁 |
+| `assets/img/apple-touch-icon.png` | iPhone／iPad 加到主畫面時的圖示 |
+| `assets/img/icon-512.png` | 大尺寸備用 |
+| `assets/img/logo.png` | 原本的淺紫底版本，給網頁內容使用 |
+
+圖示用的是深紫底白鴿——原圖的淺紫底白鴿縮到 16px 幾乎看不見，
+深底才有足夠對比。要換圖示的話，把這幾個檔案照同樣尺寸重做即可。
