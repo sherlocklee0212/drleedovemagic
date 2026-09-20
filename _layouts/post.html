@@ -10,7 +10,12 @@ layout: default
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y 年 %-m 月 %-d 日" }}</time>
     </div>
     <h1>{{ page.title }}</h1>
-    {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+    {%- comment -%}
+      description 不印在這裡——短文章的話，會跟第一段講一樣的話。
+      它的工作是首頁卡片的摘要，以及分享到 LINE、臉書時的預覽文字。
+      真的想在標題下寫一句引言，就在文章最上面加一行 lede: 你的引言。
+    {%- endcomment -%}
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
   </header>
 
   <div class="prose">{{ content }}</div>
