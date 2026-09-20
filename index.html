@@ -2,8 +2,16 @@
 layout: default
 ---
 
-<!-- ── 首屏：白袍與白羽 ───────────────────────────────── -->
+<!-- ── 首屏：舞台上的那一刻 ───────────────────────────── -->
 <section class="hero">
+  <div class="hero-media">
+    <img src="{{ '/assets/img/hero.jpg' | relative_url }}"
+         srcset="{{ '/assets/img/hero-960.jpg' | relative_url }} 960w,
+                 {{ '/assets/img/hero.jpg' | relative_url }} 1800w"
+         sizes="(max-width: 760px) 100vw, 62vw"
+         alt="李醫師在舞台上，雙手各停著白斑鳩"
+         width="1800" height="1200" fetchpriority="high">
+  </div>
   <span class="hero-mark" aria-hidden="true">鳩</span>
   <div class="wrap hero-inner">
     <p class="kicker">DrLeeDoveMagic</p>

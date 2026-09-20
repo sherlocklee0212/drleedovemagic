@@ -92,24 +92,46 @@ code {
 .site-nav a.current { background: var(--accent); color: var(--on-accent); }
 .nav-button { display: none; }
 
-/* ── 首屏 ─────────────────────────────────────────────────── */
+/* ── 首屏：舞台 ───────────────────────────────────────────── */
+/* 照片本身是黑底，所以區塊底色也用近黑，讓照片直接融進版面、看不出邊界 */
 .hero {
-  position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
-  background: linear-gradient(170deg, var(--accent-soft), var(--paper) 62%);
+  --stage: #0b0a0d;
+  position: relative; overflow: hidden; isolation: isolate;
+  background: var(--stage); color: #f5f2ef;
 }
-.hero-inner { padding: 86px 20px 78px; position: relative; z-index: 1; max-width: 760px; margin: 0; }
+.hero-media { position: absolute; inset: 0 0 0 auto; width: 64%; z-index: 0; }
+.hero-media img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: 46% 38%; border-radius: 0;
+}
+.hero-media::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(to right,  var(--stage) 4%, rgba(11,10,13,.55) 34%, rgba(11,10,13,0) 70%),
+    linear-gradient(to bottom, var(--stage), rgba(11,10,13,0) 22%),
+    linear-gradient(to top,    var(--stage), rgba(11,10,13,0) 20%);
+}
+.hero-inner { padding: 116px 20px 104px; position: relative; z-index: 1; max-width: 640px; margin: 0; }
 .hero-mark {
-  position: absolute; right: -2vw; top: -6vh; font-family: var(--font-serif);
-  font-size: min(46vw, 460px); line-height: .8; color: var(--accent);
-  opacity: .07; pointer-events: none; user-select: none;
+  position: absolute; left: -1.5vw; bottom: -12vh; z-index: 0; font-family: var(--font-serif);
+  font-size: min(34vw, 340px); line-height: .8; color: #ffffff;
+  opacity: .05; pointer-events: none; user-select: none;
 }
 .kicker {
   font-size: 11.5px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--accent); font-weight: 600; margin-bottom: 14px;
 }
-.hero h1 { font-size: clamp(2.1rem, 6.2vw, 3.5rem); letter-spacing: .02em; margin-bottom: .55em; }
-.hero h1 em { font-style: normal; color: var(--accent); font-family: var(--font-serif); }
+.hero h1 {
+  font-size: clamp(2.1rem, 6.2vw, 3.5rem); letter-spacing: .02em; margin-bottom: .55em;
+  color: #ffffff; text-shadow: 0 2px 30px rgba(0,0,0,.65);
+}
+.hero h1 em { font-style: normal; color: #c9b8d8; font-family: var(--font-serif); }
 .lede { font-size: 1.06rem; color: var(--ink-soft); line-height: 2; margin-bottom: 1.6em; }
+.hero .kicker { color: #c3b2d2; }
+.hero .lede { color: rgba(245,242,239,.78); text-shadow: 0 1px 20px rgba(0,0,0,.65); }
+.hero .btn { background: #ffffff; color: #17161a; border-color: #ffffff; }
+.hero .btn.ghost { background: transparent; color: #ffffff; border-color: rgba(255,255,255,.45); }
+.hero .btn.ghost:hover { background: rgba(255,255,255,.14); border-color: #ffffff; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn {
   display: inline-block; padding: 12px 24px; border-radius: 999px; font-size: 15px;
@@ -266,8 +288,16 @@ code {
   .site-nav { display: none; width: 100%; flex-direction: column; gap: 2px; padding-bottom: 12px; }
   .nav-toggle:checked ~ .site-nav { display: flex; }
   .site-nav a { padding: 11px 14px; border-radius: 9px; font-size: 15.5px; }
-  .hero-inner { padding: 58px 16px 52px; }
-  .hero-mark { font-size: 62vw; right: -12vw; top: auto; bottom: -8vh; }
+  /* 手機：照片放上方整寬，底部漸層過渡到文字區 */
+  .hero { display: flex; flex-direction: column; }
+  .hero-media { position: relative; width: 100%; height: min(52vh, 340px); }
+  .hero-media img { object-position: 50% 32%; }
+  .hero-media::after {
+    background: linear-gradient(to bottom,
+      rgba(11,10,13,.5) 0%, rgba(11,10,13,0) 28%, rgba(11,10,13,.25) 64%, var(--stage) 100%);
+  }
+  .hero-inner { padding: 6px 16px 50px; max-width: none; }
+  .hero-mark { font-size: 56vw; left: -8vw; bottom: -5vh; }
   .section { padding: 48px 16px 4px; }
   .about-inner, .footer-inner { grid-template-columns: 1fr; padding: 46px 16px; }
   .post-nav { grid-template-columns: 1fr; }
