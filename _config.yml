@@ -8,8 +8,8 @@ author: 李醫師
 lang: zh-Hant
 
 # 部署後改成你的網址，例如 https://drleedovemagic.com
-url: ""
-baseurl: ""
+url: "https://sherlocklee0212.github.io"
+baseurl: "/drleedovemagic"
 
 # ── 文章網址格式 ──────────────────────────────────────────────
 permalink: /posts/:year/:month/:day/:title/
