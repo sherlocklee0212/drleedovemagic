@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<!-- ── 首屏：白袍與白羽 ───────────────────────────────── -->
+<section class="hero">
+  <span class="hero-mark" aria-hidden="true">鳩</span>
+  <div class="wrap hero-inner">
+    <p class="kicker">DrLeeDoveMagic</p>
+    <h1>李醫師的<em>鳩</em>是魔法</h1>
+    <p class="lede">
+      我養白斑鳩，也變鴿子魔術。<br>
+      這裡記錄牠們的日常飼育、育雛、訓練與健康照護，
+      以及一場魔術從手裡練成的過程。
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="{{ '/categories/daily/' | relative_url }}">從日常看起</a>
+      <a class="btn ghost" href="{{ '/categories/magic/' | relative_url }}">看魔術紀錄</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 最新紀錄 ──────────────────────────────────────── -->
+<section class="wrap section">
+  <header class="section-head">
+    <h2>最新紀錄</h2>
+    <a class="link-more" href="{{ '/archive/' | relative_url }}">全部文章 <span aria-hidden="true">→</span></a>
+  </header>
+
+  {% if site.posts.size > 0 %}
+    <div class="grid">
+      {% for post in site.posts limit: 6 %}{% include post-card.html post=post %}{% endfor %}
+    </div>
+  {% else %}
+    <p class="empty">還沒有文章。在 <code>_posts/</code> 放進第一篇 Markdown 就會出現在這裡。</p>
+  {% endif %}
+</section>
+
+<!-- ── 六大分類 ──────────────────────────────────────── -->
+<section class="wrap section">
+  <header class="section-head">
+    <h2>逛逛分類</h2>
+    <p class="muted">六個「鳩」字開頭的專欄，從照顧到舞台。</p>
+  </header>
+
+  <div class="grid cat-grid">
+    {% for c in site.data.categories %}
+    <a class="card cat-card" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">
+      <span class="cat-icon">{% include icon.html name=c.icon %}</span>
+      <h3>{{ c.name }}</h3>
+      <p class="excerpt">{{ c.desc }}</p>
+      <span class="muted count">{{ site.categories[c.slug] | size }} 篇</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ── 關於 ─────────────────────────────────────────── -->
+<section class="about-band">
+  <div class="wrap about-inner">
+    <div>
+      <p class="kicker">關於</p>
+      <h2>白袍之外，還有一雙白色的翅膀</h2>
+      <p>
+        我是李醫師。白天看診，其他時間都在鳥舍裡：換水、添食、記錄每一窩蛋的日期，
+        以及在鏡子前反覆練一個出鳩的動作。這個網站是我的飼育筆記，也是我的排練日誌。
+      </p>
+      <a class="btn ghost" href="{{ '/about/' | relative_url }}">認識我與我的鳥</a>
+    </div>
+    <ul class="facts">
+      <li><strong>白斑鳩</strong><span class="muted">主角，也是我最久的搭檔</span></li>
+      <li><strong>飼育 · 育雛 · 訓練</strong><span class="muted">從一顆蛋到能上台</span></li>
+      <li><strong>鴿子魔術</strong><span class="muted">手法、道具與表演紀錄</span></li>
+    </ul>
+  </div>
+</section>

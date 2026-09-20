@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true">鳩</span>
+      <span class="brand-text">
+        <span class="brand-zh">李醫師的鳩是魔法</span>
+        <span class="brand-en">DrLeeDoveMagic</span>
+      </span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+    <label for="nav-toggle" class="nav-button" aria-label="開啟選單">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="主選單">
+      {% for c in site.data.categories %}
+        <a href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}"
+           {% if page.category == c.slug %}class="current" aria-current="page"{% endif %}>{{ c.name }}</a>
+      {% endfor %}
+      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="current"{% endif %}>關於李醫師</a>
+    </nav>
+  </div>
+</header>

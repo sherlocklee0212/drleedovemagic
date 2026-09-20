@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark small" aria-hidden="true">鳩</span>
+      <p>
+        <strong>李醫師的鳩是魔法</strong><br>
+        <span class="muted">{{ site.tagline }}</span>
+      </p>
+    </div>
+
+    <nav class="footer-nav" aria-label="分類">
+      <h3>分類</h3>
+      {% for c in site.data.categories %}
+        <a href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a>
+      {% endfor %}
+    </nav>
+
+    <nav class="footer-nav" aria-label="其他">
+      <h3>關於</h3>
+      <a href="{{ '/about/' | relative_url }}">關於李醫師</a>
+      <a href="{{ '/feed.xml' | relative_url }}">訂閱更新</a>
+    </nav>
+  </div>
+  <div class="wrap footer-base">
+    <p class="muted">© {{ 'now' | date: "%Y" }} 李醫師的鳩是魔法 · DrLeeDoveMagic</p>
+  </div>
+</footer>

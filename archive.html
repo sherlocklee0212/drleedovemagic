@@ -1,0 +1,26 @@
+---
+layout: page
+title: 全部文章
+subtitle: 依時間排列的完整紀錄
+permalink: /archive/
+---
+
+{% if site.posts.size == 0 %}
+  <p class="empty">還沒有文章。</p>
+{% else %}
+  {% assign years = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+  {% for year in years %}
+    <h2 class="year">{{ year.name }}</h2>
+    <ul class="archive-list">
+      {% for post in year.items %}
+        {%- assign cslug = post.categories | first -%}
+        {%- assign cdata = site.data.categories | where: "slug", cslug | first -%}
+        <li>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m.%d" }}</time>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          {% if cdata %}<span class="tag small">{{ cdata.name }}</span>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endif %}

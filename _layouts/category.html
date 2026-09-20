@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{%- assign cdata = site.data.categories | where: "slug", page.category | first -%}
+{%- assign posts = site.categories[page.category] -%}
+<div class="wrap">
+  <header class="page-head category-head">
+    <span class="cat-icon">{% include icon.html name=cdata.icon %}</span>
+    <h1>{{ cdata.name }}</h1>
+    <p class="lede">{{ cdata.desc }}</p>
+    <p class="muted count">共 {{ posts | size }} 篇紀錄</p>
+  </header>
+
+  {% if posts and posts.size > 0 %}
+    <div class="grid">
+      {% for post in posts %}{% include post-card.html post=post %}{% endfor %}
+    </div>
+  {% else %}
+    <p class="empty">這個分類還沒有文章，很快就會有了。</p>
+  {% endif %}
+
+  <nav class="cat-switch" aria-label="其他分類">
+    <h2>其他分類</h2>
+    <div class="chips">
+      {% for c in site.data.categories %}{% unless c.slug == page.category %}
+        <a class="chip" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a>
+      {% endunless %}{% endfor %}
+    </div>
+  </nav>
+</div>

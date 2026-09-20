@@ -1,0 +1,30 @@
+# 六大分類。要新增分類就在這裡加一段，然後到 categories/ 建一個同名 slug 的頁面。
+- slug: daily
+  name: 鳩日常
+  icon: bowl
+  desc: 每天的餵食、換水、放飛與相處，最平常也最真實的那一面。
+
+- slug: hatchling
+  name: 鳩來了
+  icon: egg
+  desc: 配對、下蛋、孵化、育雛到離巢，一窩鳥長大的完整過程。
+
+- slug: training
+  name: 鳩上手
+  icon: hand
+  desc: 從願意站上手指，到能穩定配合演出的訓練歷程。
+
+- slug: health
+  name: 鳩診室
+  icon: pulse
+  desc: 日常健康觀察、換羽、外傷與照護的經驗紀錄。
+
+- slug: knowledge
+  name: 鳩知道
+  icon: book
+  desc: 白斑鳩的品種、習性、壽命與飼養知識整理。
+
+- slug: magic
+  name: 鳩是魔法
+  icon: sparkle
+  desc: 鴿子魔術的手法思考、道具、排練與表演紀錄。
