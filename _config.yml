@@ -8,9 +8,10 @@ description: >-
 author: 李醫師
 lang: zh-Hant
 
-# 部署後改成你的網址，例如 https://drleedovemagic.com
-url: "https://sherlocklee0212.github.io"
-baseurl: "/drleedovemagic"
+# 正式網域。baseurl 留空表示網站放在網域根目錄
+# （之前掛在 github.io 底下時，baseurl 是 "/drleedovemagic"）
+url: "https://drleedovemagic.net"
+baseurl: ""
 
 # ── 文章網址格式 ──────────────────────────────────────────────
 permalink: /posts/:year/:month/:day/:title/
