@@ -6,7 +6,7 @@ permalink: /archive/
 ---
 
 {% if site.posts.size == 0 %}
-  <p class="empty">還沒有文章。</p>
+  <p class="empty">第一篇紀錄正在整理中，很快就會放上來。</p>
 {% else %}
   {% assign years = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
   {% for year in years %}
