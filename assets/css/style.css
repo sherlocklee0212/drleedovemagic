@@ -74,12 +74,13 @@ code {
 }
 .header-inner { display: flex; align-items: center; gap: 20px; min-height: 68px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 11px; margin-right: auto; }
+/* 站徽：白斑鳩與聽診器。用圓角方塊，和分類圖示的形狀語言一致 */
 .brand-mark {
-  width: 38px; height: 38px; flex: none; display: grid; place-items: center;
-  border: 1.5px solid var(--accent); border-radius: 50%;
-  color: var(--accent); font-family: var(--font-serif); font-size: 19px; line-height: 1;
+  width: 38px; height: 38px; flex: none; display: block;
+  border-radius: 11px; overflow: hidden; line-height: 0;
 }
-.brand-mark.small { width: 32px; height: 32px; font-size: 16px; }
+.brand-mark img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+.brand-mark.small { width: 32px; height: 32px; border-radius: 9px; }
 .brand-text { display: flex; flex-direction: column; }
 .brand-zh { font-weight: 700; font-size: 16.5px; letter-spacing: .03em; }
 .brand-en { font-size: 10.5px; letter-spacing: .16em; color: var(--ink-soft); text-transform: uppercase; }
