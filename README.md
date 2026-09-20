@@ -2,6 +2,9 @@
 
 白斑鳩的日常飼育、育雛、訓練與鴿子魔術紀錄。
 
+**網站網址：https://drleedovemagic.net**
+（網域在 Cloudflare 註冊與管理，DNS 指向 GitHub Pages）
+
 以 Jekyll 建置，由 GitHub Pages 自動發佈——**你不需要在電腦上安裝任何東西**，
 把 Markdown 檔案推上 GitHub 就會自動變成網頁。
 
