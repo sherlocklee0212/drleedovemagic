@@ -40,3 +40,8 @@ exclude:
   - Gemfile.lock
   - vendor
   - README.md
+  # 內部工作文件，不發佈到網站上
+  - CLAUDE.md
+  - 進度.md
+  - 寫作風格.md
+  - private
