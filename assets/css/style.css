@@ -268,6 +268,22 @@ code {
 }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
 
+/* ── 道具／表演一覽 ───────────────────────────────────────── */
+.catalog { list-style: none; padding: 0; margin: 1.6em 0 0; }
+.catalog li { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.catalog li:first-child { border-top: 1px solid var(--line); }
+.item-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.item-name { font-weight: 700; font-size: 1.04rem; }
+.item-maker {
+  font-size: 12px; color: var(--accent); background: var(--accent-soft);
+  padding: 3px 9px; border-radius: 999px; font-weight: 600;
+}
+.item-date { display: block; font-size: 13px; color: var(--ink-soft); margin-top: .3em; }
+.item-desc { margin: .55em 0 .7em; font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; }
+.item-link { font-size: 14.5px; color: var(--accent); font-weight: 600; }
+.item-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.after-note { font-size: 14px; margin-top: 2em; }
+
 .year { font-size: 1.2rem; margin: 2em 0 .6em; color: var(--accent); }
 .archive-list { list-style: none; padding: 0; margin: 0; }
 .archive-list li {
@@ -320,3 +336,6 @@ code {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto; }
 }
+
+/* 分類頁上方的區塊連結（目前只有鳩是魔法用到） */
+.section-links { justify-content: center; margin-top: 18px; }

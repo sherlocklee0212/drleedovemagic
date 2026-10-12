@@ -1,0 +1,30 @@
+---
+layout: page
+title: 表演紀錄
+subtitle: 已經公開的鴿子魔術表演。
+permalink: /magic/shows/
+---
+
+{% assign items = site.data.shows | sort: "date" | reverse %}
+
+{% if items.size > 0 %}
+<p class="muted count">共 {{ items.size }} 場，新的排在前面。</p>
+
+<ul class="catalog">
+  {% for s in items %}
+  <li>
+    <div class="item-head">
+      <span class="item-name">{{ s.title }}</span>
+      {% if s.place %}<span class="item-maker">{{ s.place }}</span>{% endif %}
+    </div>
+    {% if s.date %}<time class="item-date" datetime="{{ s.date | date_to_xmlschema }}">{{ s.date | date: "%Y.%m.%d" }}</time>{% endif %}
+    {% if s.desc %}<p class="item-desc">{{ s.desc }}</p>{% endif %}
+    {% if s.link %}<a class="item-link" href="{{ s.link }}" target="_blank" rel="noopener">看影片 <span aria-hidden="true">→</span></a>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">表演影片整理中，很快就會放上來。</p>
+{% endif %}
+
+<p><a class="item-link" href="{{ '/magic/props/' | relative_url }}">看鴿子道具 <span aria-hidden="true">→</span></a></p>

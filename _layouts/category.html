@@ -9,6 +9,14 @@ layout: default
     <h1>{{ cdata.name }}</h1>
     <p class="lede">{{ cdata.desc }}</p>
     <p class="muted count">共 {{ posts | size }} 篇紀錄</p>
+
+    {%- comment -%} 鳩是魔法另外有道具與表演兩個一覽區 {%- endcomment -%}
+    {% if page.category == 'magic' %}
+    <div class="hero-actions section-links">
+      <a class="btn ghost" href="{{ '/magic/props/' | relative_url }}">鴿子道具</a>
+      <a class="btn ghost" href="{{ '/magic/shows/' | relative_url }}">表演紀錄</a>
+    </div>
+    {% endif %}
   </header>
 
   {% if posts and posts.size > 0 %}

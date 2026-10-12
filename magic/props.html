@@ -1,0 +1,31 @@
+---
+layout: page
+title: 鴿子道具
+subtitle: 表演用的道具與它們的效果。只談效果，不談手法。
+permalink: /magic/props/
+---
+
+{% assign items = site.data.props | sort: "name" %}
+
+{% if items.size > 0 %}
+<p class="muted count">共 {{ items.size }} 項，依名稱排列。</p>
+
+<ul class="catalog">
+  {% for p in items %}
+  <li>
+    <div class="item-head">
+      <span class="item-name">{{ p.name }}</span>
+      {% if p.maker %}<span class="item-maker">{{ p.maker }}</span>{% endif %}
+    </div>
+    {% if p.desc %}<p class="item-desc">{{ p.desc }}</p>{% endif %}
+    {% if p.link %}<a class="item-link" href="{{ p.link }}" target="_blank" rel="noopener">看示範影片 <span aria-hidden="true">→</span></a>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">還沒有資料。</p>
+{% endif %}
+
+<p class="muted after-note">影片連結是道具廠商公開的示範，效果本身不是祕密；怎麼做到的不在這裡討論。</p>
+
+<p><a class="item-link" href="{{ '/magic/shows/' | relative_url }}">看表演紀錄 <span aria-hidden="true">→</span></a></p>
