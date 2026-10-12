@@ -5,7 +5,8 @@ subtitle: 已經公開的鴿子魔術表演。
 permalink: /magic/shows/
 ---
 
-{% assign items = site.data.shows | sort: "date" | reverse %}
+{% assign items = "" | split: "" %}
+{% if site.data.shows %}{% assign items = site.data.shows | sort: "date" | reverse %}{% endif %}
 
 {% if items.size > 0 %}
 <p class="muted count">共 {{ items.size }} 場，新的排在前面。</p>

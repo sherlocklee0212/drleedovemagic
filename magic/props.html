@@ -5,7 +5,8 @@ subtitle: 表演用的道具與它們的效果。只談效果，不談手法。
 permalink: /magic/props/
 ---
 
-{% assign items = site.data.props | sort: "name" %}
+{% assign items = "" | split: "" %}
+{% if site.data.props %}{% assign items = site.data.props | sort: "name" %}{% endif %}
 
 {% if items.size > 0 %}
 <p class="muted count">共 {{ items.size }} 項，依名稱排列。</p>
