@@ -6,6 +6,8 @@
 #   maker: 廠商
 #   desc: 一百字以內的效果說明，只寫效果，不寫手法
 #   link: 示範影片或商品頁的網址
+#   at: "2:00"   # 可不寫。影片要從第幾分幾秒開始播就填在這裡，
+#                # 同時要在 link 網址後面加上 &t=秒數（2:00 就是 &t=120）
 #
 # desc 可以用中文，不用加引號；如果內容裡有冒號，才需要用雙引號框起來。
 
@@ -16,8 +18,9 @@
 
 - name: Break Open Production Box
   maker: JL Magic
-  desc: 正面挖空的箱子，觀眾看得到裡面是空的。放進一條白絲巾，蓋子一掀，箱子四面同時倒下攤平，絲巾變成兩隻活的白鴿。箱子攤開後只剩骨架，沒有藏東西的空間。
-  link: https://www.youtube.com/watch?v=xMg5fV8tEdY
+  desc: 正面挖空的箱子，觀眾看得到裡面是空的。放進一條印著白鴿圖案的絲巾，蓋子一掀，箱子四面同時倒下攤平，絲巾變成一隻活的白鴿。箱子攤開後只剩骨架，沒有藏東西的空間。
+  link: https://www.youtube.com/watch?v=xMg5fV8tEdY&t=120
+  at: "2:00"
 
 - name: Newspaper Break Away Dove Vanish
   maker: Daytona Magic

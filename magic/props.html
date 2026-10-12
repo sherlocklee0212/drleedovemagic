@@ -19,7 +19,7 @@ permalink: /magic/props/
       {% if p.maker %}<span class="item-maker">{{ p.maker }}</span>{% endif %}
     </div>
     {% if p.desc %}<p class="item-desc">{{ p.desc }}</p>{% endif %}
-    {% if p.link %}<a class="item-link" href="{{ p.link }}" target="_blank" rel="noopener">看示範影片 <span aria-hidden="true">→</span></a>{% endif %}
+    {% if p.link %}<a class="item-link" href="{{ p.link }}" target="_blank" rel="noopener">看示範影片{% if p.at %}（{{ p.at }} 起）{% endif %} <span aria-hidden="true">→</span></a>{% endif %}
   </li>
   {% endfor %}
 </ul>
